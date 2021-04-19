@@ -7,8 +7,12 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        String s = "XCIII";
-        RomanNumeralConverter numeralConverter = new RomanNumeralConverter(s);
-        System.out.println(s + " -> " + numeralConverter.romanToInt());
+        if (args.length != 1) {
+            System.err.println("Incorrect arguments.");
+        } else {
+            String romanNumeral = args[0];
+            RomanNumeralConverter numeralConverter = new RomanNumeralConverter(romanNumeral);
+            System.out.println(romanNumeral + " -> " + numeralConverter.romanToInt());
+        }
     }
 }
